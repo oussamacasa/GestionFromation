@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: SpringBootRestApiMySQL
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: Oussama
+Implementation-Vendor-Id: com.grokonez
+Build-Jdk: 1.8.0_45
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/spring-boot-restapi-mysql
+Created-By: Maven Integration for Eclipse
+

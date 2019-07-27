@@ -1,0 +1,23 @@
+<table id="t01">
+    <tr>
+        <th>Liste des participants</th>
+        <th></th>
+    </tr>
+
+<tr *ngFor="let participantItem of participantItems | async ">
+            {{participantItem.name}} {{participantItem.lastName}}<br>
+            <b>Email:</b> {{participantItem.email}}<br>
+           <b> Adresse: </b>{{participantItem.adress}}<br>
+           <b> Telephone:</b> {{participantItem.tel}}<br>
+           <td>
+           <nav class="tools">
+                <a  [routerLink]="['../edit', participantItem._id]" routerLinkActive="active" class="inscrire">
+                    <img src="assets/edit.png" class="icon" />
+                  </a>
+                <a class="delete" (click)="onDelete(participantItem._id)" routerLinkActive="active">
+                     <img src="assets/delete.png" class="icon" />
+                </a>
+            </nav></td>
+        </tr>
+       
+</table> 

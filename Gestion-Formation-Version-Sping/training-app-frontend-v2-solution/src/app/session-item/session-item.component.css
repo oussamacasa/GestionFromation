@@ -1,0 +1,63 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 280px;
+  border: 2px solid;
+  background-color: #29394b;
+  padding: 10px;
+  color: #bdc2c5;
+}
+h2 {
+  font-size: 1.6em;
+}
+:host.session-web {
+  border-color: #53ace4;
+}
+:host.session-web > h2 {
+  color: #53ace4;
+}
+:host.session-mobile {
+  border-color: #45bf94;
+}
+:host.session-mobile > h2 {
+  color: #45bf94;
+}
+.tools {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.partager {
+  display: block;
+  background-color: #1176ec;
+  padding: 4px;
+  font-size: .8em;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.delete {
+  display: block;
+  background-color: #ec4342;
+  padding: 4px;
+  font-size: .8em;
+  border-radius: 7px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.inscrire {
+  display: block;
+  background-color: #37ad79;
+  padding: 4px;
+  font-size: .8em;
+  border-radius:7px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.inscrire.link-is-disabled {
+  pointer-events: none;
+  background-color: #88ad94;
+}
+

@@ -1,0 +1,63 @@
+<section id="main">
+  <div id ="infos">
+  <div  id="sessions">
+  <img class="pic"  src="assets/sessionsIcon2.png" />
+  <div class="text">
+  {{nSessions | async}}<br> Sessions
+  </div>
+  </div>
+  
+  <div id="forms">
+  <img class="pic" src="assets/participantsIcon2.png" />
+  <div class="text">
+  {{nParticipants | async}}<br> Participants
+  </div>
+  </div>
+  <div id="parts">
+  <img class="pic" src="assets/formateursIcon2.png" />
+  <div class="text">
+    {{nFormateurs | async}}<br>Formateurs
+  </div>
+  </div>
+  </div>
+  
+  <table class= "tab" id="tracks">
+  <tr>
+    <th>Track</th>
+    <th>Nombre Des Sessions</th>
+  </tr>
+  <tr>
+      <td>MEAN Stack</td>
+      <td>{{nMean | async}}</td>
+    </tr>
+    <tr>
+      <td >Angular</td>
+      <td>{{nAngular | async}}</td>
+    </tr>
+    <tr>
+    <td>Node JS</td>
+      <td>{{nNodeJS | async}}</td>
+    </tr>
+    <tr>
+      <td>Android</td>
+      <td>{{nAndroid | async}}</td>
+    </tr>
+    <tr>
+      <td>Xamarin</td>
+      <td>{{nXamarin | async}}</td>
+    </tr>
+    <tr>
+      <td>Swift</td>
+      <td>{{nSwift | async}}</td>
+    </tr>
+  </table>
+
+  <table id ="top" class="tab">
+  <tr>
+    <th>Top Formateurs</th>
+  </tr>
+  <tr *ngFor="let sessionItem of sessionItems | async">
+    <td *ngIf="sessionItem.participants == 20">{{sessionItem.formateur}}</td>
+    </tr>
+  </table>
+  </section>

@@ -1,0 +1,23 @@
+<table id="t01">
+        <tr>
+            <th>Liste des formateurs</th>
+            <th></th>
+        </tr>
+    
+    <tr *ngFor="let formateurItem of formateurItems | async">
+                {{formateurItem.name}} {{formateurItem.lastname}}<br>
+                <b>Email:</b> {{formateurItem.email}}<br>
+               <b> Adresse: </b>{{formateurItem.adress}}<br>
+               <b> Telephone:</b> {{formateurItem.tel}}<br>
+               <td>
+               <nav class="tools">
+                    <a  [routerLink]="['../edit', formateurItem.id]" routerLinkActive="active" class="inscrire">
+                        <img src="assets/edit.png" class="icon" />
+                      </a>
+                    <a class="delete" (click)="onDelete(formateurItem.id)" routerLinkActive="active">
+                         <img src="assets/delete.png" class="icon" />
+                    </a>
+                </nav></td>
+            </tr>
+           
+    </table> 

@@ -1,0 +1,17 @@
+<header>
+  <h1>Liste des sessions de formation </h1>
+  <p class="description">Suivre les sessions que je veux participer.</p>
+</header>
+<section>
+  <app-session-item *ngFor="let sessionItem of sessionItems" [session]="sessionItem"
+                    [ngClass]="{'session-web': sessionItem.name === 'Web', 'session-mobile': sessionItem.name === 'Mobile'}">
+  </app-session-item>
+</section>
+<footer>
+
+  <a routerLink="/adminp" routerLinkActive="active">
+    <img src="assets/admin3.png" class="icon" />
+  </a>
+</footer>
+
+

@@ -1,0 +1,34 @@
+
+<nav>
+    <img src="assets/wedinar.png" class="icon2" /> <div class="text">Espace Admin</div>
+    <br><br>
+        <img src="assets/look.png" class="icon" />
+       <!-- <div class="look"><input type="text" name="recherche" value="Chercher Session"  ></div>  -->
+      <br><br>
+<div><a routerLink="./dashboard" routerLinkActive="active">
+<img src="assets/dashboardIcon.png" class="icon" />
+<div class="text1"></div>
+  </a>
+  <HR size=2 align=center width="100%">
+  <a routerLink="./sessions" routerLinkActive="active">
+    <img src="assets/sessionsIcon.png" class="icon" />
+    <div class="text2"></div>
+  </a>
+  <HR size=2 align=center width="100%">
+  <a routerLink="./formateurs" routerLinkActive="active">
+    <img src="assets/formateursIcon.png" class="icon" />
+    <div class="text3"></div>
+  </a>
+  <HR size=2 align=center width="100%">
+  <a routerLink="./participants" routerLinkActive="active">
+    <img src="assets/participantsIcon.png" class="icon" />
+    <div class="text4"></div>
+  </a>
+  <HR size=2 align=center width="100%"></div>
+</nav>
+<section>
+  <nav>
+      <img src="assets/logout.png" class="icon1" />
+  </nav>
+  <router-outlet></router-outlet>
+</section>

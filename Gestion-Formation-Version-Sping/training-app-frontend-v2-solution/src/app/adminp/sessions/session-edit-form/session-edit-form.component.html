@@ -1,0 +1,60 @@
+<header>
+  <h2>Modifier une session de formation</h2>
+</header>
+<form #sessionItemForm="ngForm" (ngSubmit)="editSession(sessionItemForm.value)">
+  <ul>
+    <li>
+      <label for="name">Name</label>
+      <select name="name" id="name" [(ngModel)]="session.name" required>
+        <option value="Web">Web</option>
+        <option value="Mobile">Mobile</option>
+      </select>
+    </li>
+    <li>
+      <label for="track">Track</label>
+      <select id="track"
+              required
+              [(ngModel)]="session.track" name="track">
+        <option *ngFor="let track of tracks" [value]="track">{{track}}</option>
+      </select> {{session.track}}
+
+    </li>
+    <i>
+      <label for="date">Date</label>
+      <input type="date" name="date" id="date"  [(ngModel)]="session.date" required>
+      <!--<input type="date" name="date" id="date"  ngModel="{{session.date | date: 'd MM yy'}}" required>-->
+
+      <label for="duree">Days</label>
+      <input type="number" name="duree" id="duree"  [(ngModel)]="session.duree" required>
+    </i>
+    <i>
+      <!-- <label for="local">Adress</label>
+      <input type="text" name="local" id="local"  [(ngModel)]="session.adress" required> -->
+      <label for="adress">Adress</label>
+      <input type="text" name="adress" id="adress"  [(ngModel)]="session.adress"  #adress="ngModel" minlength="4" required>
+  <div *ngIf="adress.invalid && (adress.dirty || adress.touched)">
+  <div *ngIf="adress.errors.minlength">
+   Minimum 4 caractères!
+  </div>
+  <div  *ngIf="adress.errors.required">
+   Le champ adresse est obligatoire!
+  </div>
+</div>
+
+    </i><br><br>
+    <i>
+      <label for="participants">Participants</label>
+      <input type="number" name="participants" id="participants"  [(ngModel)]="session.participants" required>
+    </i>
+    <li>
+        <label for="formateur">Formateurs</label>
+        <select name="formateur" id="formateur" [(ngModel)]="session.formateur" required>
+          <option *ngFor="let formateurItem of formateurItems | async" 
+         value="{{formateurItem.id}}" >
+            {{formateurItem.name}} {{formateurItem.lastName}}</option>
+            </select>
+      </li>
+  </ul>
+  <button type="submit" [disabled]="!sessionItemForm.form.valid">Modifier</button>
+</form>
+
